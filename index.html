@@ -6,14 +6,59 @@
   
   
   <link rel='stylesheet prefetch' href='css/photoswipe.min.css'>
-<link rel='stylesheet prefetch' href='css/default-skin.min.css'>
+  <link rel='stylesheet prefetch' href='css/default-skin.min.css'>
 
-  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Compiled and minified CSS -->
+  <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   
 </head>
 
 <body>
-  <button id="btn">Open PhotoSwipe</button>
+
+
+
+    <div class="container">
+        <div class="row"></div>
+        <button id="btn">Open PhotoSwipe</button>
+        <a href="#" data-activates="slide-out" class="button-collapse grey btn waves-effect waves-light btn-large pulse"><i class="material-icons">cloud</i></a>
+    </div>
+
+
+
+
+
+
+<ul id="slide-out" class="side-nav">
+    <li><div class="user-view">
+      <div class="background"></div>
+      <a href="#!name"><span class="white-text name">John Doe</span></a>
+      <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+    </div></li>
+    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+    <li><a href="#!">Second Link</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Subheader</a></li>
+    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">

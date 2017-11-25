@@ -5,32 +5,33 @@
         // build items array
         var items = [
             {
-                src: 'images/1-1.jpg',
+                src: 'images/1/1-1.jpg',
                 w: 2500,
-                h: 1665
+                h: 1665,
+                title: 'Father'
             },
             {
-                src: 'images/1-2.jpg',
+                src: 'images/1/1-2.jpg',
                 w: 1500,
                 h: 1000
             },
             {
-                src: 'images/1-3.jpg',
+                src: 'images/1/1-3.jpg',
                 w: 1500,
                 h: 1000
             },
             {
-                src: 'images/1-4.jpg',
+                src: 'images/1/1-4.jpg',
                 w: 1500,
                 h: 1000
             },
             {
-                src: 'images/1-5.jpg',
+                src: 'images/1/1-5.jpg',
                 w: 1500,
                 h: 1000
             },
             {
-                src: 'images/1-6.jpg',
+                src: 'images/1/1-6.jpg',
                 w: 1500,
                 h: 1000
             },
@@ -54,4 +55,5 @@
     openPhotoSwipe();
     document.getElementById('btn').onclick = openPhotoSwipe;
 
+    $(".button-collapse").sideNav();
 
