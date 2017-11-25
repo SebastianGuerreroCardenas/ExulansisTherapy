@@ -81,6 +81,7 @@ $( document ).ready(function() {
  loadJSON(function(response) {
   // Parse JSON string into object
     var actual_JSON = JSON.parse(response);
+    console.log(actual_JSON);
  });
 
     //document.getElementById('btn').onclick = openPhotoSwipe;
