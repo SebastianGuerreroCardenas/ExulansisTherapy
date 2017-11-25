@@ -1,12 +1,20 @@
 {
 	"gallery" : [
-		{
-			"filename": "1",
-			"title": "Summer",
-			"start": 1,
-			"end": 32,
-			"description": "mus vitae porttitor urna, vitae lobortis mauris. Etiam vulputate viverra venenatis.",
-			"imageDescriptions": []
-		}
+					{
+						"filename": "1",
+						"title": "Summer",
+						"start": 1,
+						"end": 32,
+						"description": "mus vitae porttitor urna, vitae lobortis mauris. Etiam vulputate viverra venenatis.",
+						"imageDescriptions": {}
+					},
+					{
+						"filename": "2",
+						"title": "Schenley",
+						"start": 1,
+						"end": 4,
+						"description": "mus vitae porttitor urna, vitae lobortis mauris. Etiam vulputate viverra venenatis.",
+						"imageDescriptions": {"i1": {"size": {"w": 3000, "h": 3000} , "description": "This is a tree" }}
+					}
 	]
 }
