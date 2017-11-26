@@ -28,18 +28,21 @@ $( document ).ready(function() {
 
     //given a galley, gets all the images, adds photoswipe and respective content
     function createGallery(gallery) {
-        let COUNT = 4;
+        let order = gallery.order;
+        console.log(order);
+        let COUNT = 3;
         $('#title').append(gallery.title);
         $('#description').append(gallery.description);
         let content = "";
         for (var i = gallery.start; i <= gallery.end; i++) {
-            content += `<div class="col s4"><div class="card hoverable"><div class="card-image"><img class="thumbnail" data-filename="${gallery.filename}" data-index="${i}" id="i${i}" src="images/${gallery.filename}/${gallery.filename}-${i}.jpg"></div></div></div>`;
-
-            // $('#images').append(`<img class="thumbnail" data-filename="${gallery.filename}" data-index="${i}" id="i${i}" src="images/${gallery.filename}/${gallery.filename}-${i}.jpg">`);
-
-            if (i % COUNT === 0 ) {
-                $('#images').append(`<div class="row"> ${content} </div>`);
-                content = "";
+            if (order) {
+                content += `<div class="col s12 m6 l4 center-align test"><img class="thumbnail card hoverable" data-filename="${gallery.filename}" data-index="${i}" id="i${i}" src="images/${gallery.filename}/${gallery.filename}-${i}.jpg"></div>`;
+                if (i % COUNT === 0 ) {
+                    $('#imagesOrder').append(`<div class="row valign-wrapper"> ${content} </div>`);
+                    content = "";
+                }
+            } else {
+                $('#imagesNoOrder').append(`<div class="card hoverable"><div class="card-image"><img class="thumbnail" data-filename="${gallery.filename}" data-index="${i}" id="i${i}" src="images/${gallery.filename}/${gallery.filename}-${i}.jpg"></div></div>`);
             }
         }
 
@@ -138,6 +141,7 @@ $( document ).ready(function() {
                                 {
                                     "filename": "1",
                                     "title": "Summer",
+                                    "order": true,
                                     "start": 1,
                                     "end": 32,
                                     "description": "mus vitae porttitor urna, vitae lobortis mauris. Etiam vulputate viverra venenatis.",
@@ -146,6 +150,7 @@ $( document ).ready(function() {
                                 {
                                     "filename": "2",
                                     "title": "Schenley",
+                                    "order": false,
                                     "start": 1,
                                     "end": 4,
                                     "description": "mus vitae porttitor urna, vitae lobortis mauris. Etiam vulputate viverra venenatis.",

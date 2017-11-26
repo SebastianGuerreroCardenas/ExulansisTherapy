@@ -3,6 +3,7 @@
 					{
 						"filename": "1",
 						"title": "Summer",
+						"order": true,
 						"start": 1,
 						"end": 32,
 						"description": "mus vitae porttitor urna, vitae lobortis mauris. Etiam vulputate viverra venenatis.",
@@ -10,7 +11,8 @@
 					},
 					{
 						"filename": "2",
-						"title": "Schenley",
+						"title": "Schenley",,
+						"order": false,
 						"start": 1,
 						"end": 4,
 						"description": "mus vitae porttitor urna, vitae lobortis mauris. Etiam vulputate viverra venenatis.",
