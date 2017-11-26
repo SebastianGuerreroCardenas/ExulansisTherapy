@@ -28,10 +28,19 @@ $( document ).ready(function() {
 
     //given a galley, gets all the images, adds photoswipe and respective content
     function createGallery(gallery) {
+        let COUNT = 4;
         $('#title').append(gallery.title);
         $('#description').append(gallery.description);
+        let content = "";
         for (var i = gallery.start; i <= gallery.end; i++) {
-            $('#images').append(`<img class="thumbnail" data-filename="${gallery.filename}" data-index="${i}" id="i${i}" src="images/${gallery.filename}/${gallery.filename}-${i}.jpg">`);
+            content += `<div class="col s4"><div class="card hoverable"><div class="card-image"><img class="thumbnail" data-filename="${gallery.filename}" data-index="${i}" id="i${i}" src="images/${gallery.filename}/${gallery.filename}-${i}.jpg"></div></div></div>`;
+
+            // $('#images').append(`<img class="thumbnail" data-filename="${gallery.filename}" data-index="${i}" id="i${i}" src="images/${gallery.filename}/${gallery.filename}-${i}.jpg">`);
+
+            if (i % COUNT === 0 ) {
+                $('#images').append(`<div class="row"> ${content} </div>`);
+                content = "";
+            }
         }
 
         $('img').click(function(e) {
@@ -53,7 +62,11 @@ $( document ).ready(function() {
 
     //selects a random image to show from all the galleries
     function homePage(galleries) {
-        return 42;
+        let total = galleries.gallery.length;
+        let gal = Math.floor( (Math.random() * total));
+        let end = galleries.gallery[gal].end;
+        let filename = galleries.gallery[gal].filename;
+        $('#cover').append( `<a href="?gallery=${filename}"><img class="responsive-img" src="images/${filename}/${filename}-${ Math.floor((Math.random() * end) + 1) }.jpg"></img></a>`);
     }
 
     function findGallery(galleries, filename){
@@ -68,7 +81,8 @@ $( document ).ready(function() {
 
     function handleView(galleries){
         let gallery = decodeURI($.urlParam('gallery'));
-        if (gallery != null) {
+        console.log(gallery);
+        if (gallery != "NO") {
             console.log('gallery name is ' + gallery);
             //add logic for specific gallery
             createGallery(findGallery(galleries, gallery));
@@ -99,7 +113,7 @@ $( document ).ready(function() {
             return results[1] || 0;
         } catch(err) {
             console.log(err);
-            return null;
+            return "NO";
         }
     }
 
@@ -163,65 +177,6 @@ $( document ).ready(function() {
         var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
         gallery.init();
     };
-
-    //PhotoSwipe Code
-    var openPhotoSwipe = function() {
-        var pswpElement = document.querySelectorAll('.pswp')[0];
-
-        // build items array
-        var items = [
-            {
-                src: 'images/1/1-1.jpg',
-                w: 2500,
-                h: 1665,
-                title: 'Father'
-            },
-            {
-                src: 'images/1/1-2.jpg',
-                w: 1500,
-                h: 1000
-            },
-            {
-                src: 'images/1/1-3.jpg',
-                w: 1500,
-                h: 1000
-            },
-            {
-                src: 'images/1/1-4.jpg',
-                w: 1500,
-                h: 1000
-            },
-            {
-                src: 'images/1/1-5.jpg',
-                w: 1500,
-                h: 1000
-            },
-            {
-                src: 'images/1/1-6.jpg',
-                w: 1500,
-                h: 1000
-            },
-        ];
-        
-        // define options (if needed)
-        var options = {
-                 // history & focus options are disabled on CodePen        
-            history: false,
-            focus: false,
-
-            showAnimationDuration: 0,
-            hideAnimationDuration: 0
-            
-        };
-        
-        var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
-        gallery.init();
-    };
-
-    $('#btn').click(function(e) {
-        openPhotoSwipe();
-    })
-
 
 
     //Materilize Jquery
