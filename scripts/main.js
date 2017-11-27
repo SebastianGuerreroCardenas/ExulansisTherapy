@@ -103,7 +103,7 @@ $( document ).ready(function() {
         let photo = randomPhoto(galleries);
         $('#cover').append( `<a href="?gallery=${photo.file}"><img class="responsive-img" src="${photo.path}" id="mainPhoto"></img></a>`);
         setTimeout(function() { Materialize.fadeInImage('#mainPhoto')}, 200);
-        setTimeout(function() { Materialize.showStaggeredList('#menuList');}, 5000 );
+        setTimeout(function() { Materialize.showStaggeredList('#menuList');}, 2000 );
         setTimeout(function(){$('.tap-target').tapTarget('open');}, 20000) //timer for home screen for dialog.
     }
 
