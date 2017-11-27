@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>An Anonymous Pen on CodePen</title>
+  <title id="mainTitle"></title>
   
   
   <link rel='stylesheet prefetch' href='css/photoswipe.min.css'>
@@ -24,10 +24,23 @@
 
 
     <div class="container">
-        <div class="row"></div>
-        <a href="#" data-activates="slide-out" class="button-collapse btn-flat"><i class="material-icons left">chevron_left</i> More</a>
-        
 
+        <ul id="menuList"> 
+            <li id="menuItem">
+                <a href="#" data-activates="slide-out" class="button-collapse btn-flat" id="menu"><i class="material-icons left">chevron_left</i> More</a>
+            </li>
+        </ul>
+        
+        <!-- Tap Target Structure -->
+      <div class="tap-target yellow" data-activates="menu">
+        <div class="tap-target-content">
+          <h5>Hi!</h5>
+          <p>Incase it is your first time, this button here will help you explore more Galleries!, so click me! or not... you dont have to.</p>
+        </div>
+      </div>
+          
+
+        <div id="cover"></div>
         <div class="row center-align">
             <h1 id='title'></h1>
         </div>
@@ -38,7 +51,7 @@
             </div>
         </div>
 
-        <div id="cover"></div>
+        
         <div id="imagesOrder">
         </div>
         <div>
@@ -60,11 +73,13 @@
         <li>
             <div class="user-view">
                 <div class="background">
-                    <img src="images/1/1-1.jpg">
+                    <a href="about.html" id="backgroundPhoto"> </a>
                 </div>
-                <a href=""><img class="circle" src="images/2/2-1.jpg"></a>
-                <a href=""><span class="white-text name">Sebastián Guerrrero Cardenas</span></a>
-                <a href=""><span class="white-text email">sebastian.guerrero.cmu@gmail.com</span></a>
+                <a href="about.html" id="profile"> </a>
+                <a href="about.html" id="name" > </a>
+                <span id="email">
+                    
+                </span>
             </div>
         </li>
 

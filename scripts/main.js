@@ -6,9 +6,20 @@ $( document ).ready(function() {
     //once data is loaded it adds all the galleries to the nav par
     function addNavItems(galleries){
         console.log('Adding Nav Items...');
+        aboutMeNav(galleries);
         for (var i = 0; i < galleries.gallery.length; i++) {
-            $('#slide-out').append(`<li><a href="?gallery=${galleries.gallery[i].filename}">${galleries.gallery[i].title}</a></li> <li><div class="divider"></div></li>`);
+            $('#slide-out').append(`<li><a href="index.html?gallery=${galleries.gallery[i].filename}">${galleries.gallery[i].title}</a></li> <li><div class="divider"></div></li>`);
         }
+    }
+
+    function aboutMeNav(galleries) {
+        let about = galleries.about;
+        $('#mainTitle').append(about.mainTitle);
+        $('#name').append(`<span class="white-text name">${about.name}</span>`);
+        $('#email').append(`<a href="mailto:${about.email}"><span class="white-text email">${about.email}</span></a>`);
+        $('#profile').append(`<img class="circle" src="${about.profilePhoto}">`);
+        let photo = randomPhoto(galleries);
+        $('#backgroundPhoto').append(`<img src="${photo.path}"></img>`);
     }
 
 
@@ -26,10 +37,18 @@ $( document ).ready(function() {
 
 
 
+    function disapearingImages(i){
+        setTimeout(function(){
+            for(var j = i; j> i - 3; j--) {
+                Materialize.fadeInImage(`#i${j}`);
+                console.log(j);
+            }
+        },1300 + (i * 100));
+    }
+
     //given a galley, gets all the images, adds photoswipe and respective content
     function createGallery(gallery) {
         let order = gallery.order;
-        console.log(order);
         let COUNT = 3;
         $('#title').append(gallery.title);
         $('#description').append(gallery.description);
@@ -40,11 +59,18 @@ $( document ).ready(function() {
                 if (i % COUNT === 0 ) {
                     $('#imagesOrder').append(`<div class="row valign-wrapper"> ${content} </div>`);
                     content = "";
+                    disapearingImages(i);
+
                 }
             } else {
                 $('#imagesNoOrder').append(`<div class="card hoverable"><div class="card-image"><img class="thumbnail" data-filename="${gallery.filename}" data-index="${i}" id="i${i}" src="images/${gallery.filename}/${gallery.filename}-${i}.jpg"></div></div>`);
+                Materialize.fadeInImage(`#i${i}`);
             }
         }
+
+
+        setTimeout(function() { Materialize.showStaggeredList('#menuList');}, 1000 );
+        setTimeout(function(){$('.tap-target').tapTarget('open');}, 1000000) //timer for home screen for dialog.
 
         $('img').click(function(e) {
             let indexI = parseInt(e.target.getAttribute('data-index'));
@@ -63,13 +89,22 @@ $( document ).ready(function() {
         });
     }
 
-    //selects a random image to show from all the galleries
-    function homePage(galleries) {
+
+    function randomPhoto(galleries) {
         let total = galleries.gallery.length;
         let gal = Math.floor( (Math.random() * total));
         let end = galleries.gallery[gal].end;
         let filename = galleries.gallery[gal].filename;
-        $('#cover').append( `<a href="?gallery=${filename}"><img class="responsive-img" src="images/${filename}/${filename}-${ Math.floor((Math.random() * end) + 1) }.jpg"></img></a>`);
+        return {file: filename, path: `images/${filename}/${filename}-${ Math.floor((Math.random() * end) + 1) }.jpg`}
+    }
+
+    //generates home page
+    function homePage(galleries) {
+        let photo = randomPhoto(galleries);
+        $('#cover').append( `<a href="?gallery=${photo.file}"><img class="responsive-img" src="${photo.path}" id="mainPhoto"></img></a>`);
+        setTimeout(function() { Materialize.fadeInImage('#mainPhoto')}, 200);
+        setTimeout(function() { Materialize.showStaggeredList('#menuList');}, 5000 );
+        setTimeout(function(){$('.tap-target').tapTarget('open');}, 20000) //timer for home screen for dialog.
     }
 
     function findGallery(galleries, filename){
@@ -98,7 +133,6 @@ $( document ).ready(function() {
 
     //runs once and handles all logic
     function main(){
-        console.log('app is starting..')
         galleries = getGalleries();
         localStorage.setItem('g', JSON.stringify(galleries) )
         addNavItems(galleries);
@@ -137,6 +171,13 @@ $( document ).ready(function() {
     function getGalleries() {
 
         return {
+
+                "about": {
+                    "name": "Sebastian Guerrero Cardenas",
+                    "email": "sebastian.guerrero.cmu@gmail.com",
+                    "mainTitle": "Exulansis Therapy",
+                    "profilePhoto": "images/2/2-1.jpg"
+                },
                 "gallery" : [
                                 {
                                     "filename": "1",
@@ -145,7 +186,9 @@ $( document ).ready(function() {
                                     "start": 1,
                                     "end": 32,
                                     "description": "mus vitae porttitor urna, vitae lobortis mauris. Etiam vulputate viverra venenatis.",
-                                    "imageDescriptions": {}
+                                    "imageDescriptions": {"i1": {"size": {"w": 3000, "h": 3000} , "description": "This is a tree" },
+                                                           "i17": {"size": {"w": 1353,"h": 2047} }
+                                                            }
                                 },
                                 {
                                     "filename": "2",
@@ -154,7 +197,9 @@ $( document ).ready(function() {
                                     "start": 1,
                                     "end": 4,
                                     "description": "mus vitae porttitor urna, vitae lobortis mauris. Etiam vulputate viverra venenatis.",
-                                    "imageDescriptions": {"i1": {"size": {"w": 3000, "h": 3000} , "description": "This is a tree" }}
+                                    "imageDescriptions": {"i1": {"size": {"w": 3000, "h": 3000} , "description": "This is a tree" },
+                                                           "i17": {"size": {"w": 1353,"h": 2047} }
+                                                            }
                                 }
                 ]
             }
@@ -186,6 +231,15 @@ $( document ).ready(function() {
 
     //Materilize Jquery
     $(".button-collapse").sideNav();
+    $('.button-collapse').sideNav({
+            menuWidth: 300, // Default is 300
+            edge: 'left', // Choose the horizontal origin
+            closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+            draggable: true, // Choose whether you can drag to open on touch screens,
+            onOpen: function(el) { /* Do Stuff */ }, // A function to be called when sideNav is opened
+            onClose: function(el) { /* Do Stuff */ }, // A function to be called when sideNav is closed
+        }
+    );
 
 
     main();

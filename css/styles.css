@@ -1,5 +1,14 @@
 .thumbnail {
 	width: 260px;
+	opacity: 0;
+}
+
+#menuItem {
+	opacity: 0;
+}
+
+#mainPhoto {
+	opacity: 0;
 }
 
 /*body {

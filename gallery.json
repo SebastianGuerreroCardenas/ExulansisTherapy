@@ -1,4 +1,10 @@
 {
+	"about": {
+		"name": "Sebastian Guerrero Cardenas",
+		"email": "sebastian.guerrero.cmu@gmail.com",
+		"mainTitle": "Exulansis Therapy",
+		"profilePhoto": "images/2/2-1.jpg"
+	},
 	"gallery" : [
 					{
 						"filename": "1",
@@ -11,7 +17,7 @@
 					},
 					{
 						"filename": "2",
-						"title": "Schenley",,
+						"title": "Schenley",
 						"order": false,
 						"start": 1,
 						"end": 4,
