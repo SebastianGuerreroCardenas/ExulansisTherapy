@@ -1,7 +1,9 @@
 $( document ).ready(function() {
     
     
-    //page logic
+    /*********** 
+        Nav Bar
+    ************/
 
     //once data is loaded it adds all the galleries to the nav par
     function addNavItems(galleries){
@@ -21,6 +23,11 @@ $( document ).ready(function() {
         let photo = randomPhoto(galleries);
         $('#backgroundPhoto').append(`<img src="${photo.path}"></img>`);
     }
+
+
+    /***************************** 
+        Photoswipe logic
+    ******************************/
 
 
     function generateSlides(gallery, index) {
@@ -55,9 +62,9 @@ $( document ).ready(function() {
         let content = "";
         for (var i = gallery.start; i <= gallery.end; i++) {
             if (order) {
-                content += `<div class="col s12 m6 l4 center-align test"><img class="thumbnail card hoverable" data-filename="${gallery.filename}" data-index="${i}" id="i${i}" src="images/${gallery.filename}/${gallery.filename}-${i}.jpg"></div>`;
+                content += `<div class="col s12 m6 l4 center-align test"><img class="thumbnail card hoverable responsive-img" data-filename="${gallery.filename}" data-index="${i}" id="i${i}" src="images/${gallery.filename}/${gallery.filename}-${i}.jpg"></div>`;
                 if (i % COUNT === 0 ) {
-                    $('#imagesOrder').append(`<div class="row valign-wrapper"> ${content} </div>`);
+                    $('#imagesOrder').append(`<div class="row imageRows"> ${content} </div>`);
                     content = "";
                     disapearingImages(i);
 
@@ -87,6 +94,10 @@ $( document ).ready(function() {
                                                                                                     return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
                                                                                                 }});
         });
+
+        if (window.innerWidth >= 600) {
+            $('.imageRows').addClass('valign-wrapper');
+        }
     }
 
 
