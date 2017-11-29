@@ -1,0 +1,22 @@
+{
+  "name": "photomaker",
+  "version": "1.0.0",
+  "description": "a tool to create JSON file from photo directory",
+  "main": "photomaker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SebastianGuerreroCardenas/ExulansisTherapy.git"
+  },
+  "author": "Sebastian Guerrero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SebastianGuerreroCardenas/ExulansisTherapy/issues"
+  },
+  "homepage": "https://github.com/SebastianGuerreroCardenas/ExulansisTherapy#readme",
+  "dependencies": {
+    "image-size": "^0.6.1"
+  }
+}

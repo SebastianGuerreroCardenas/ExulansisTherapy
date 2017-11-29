@@ -34,8 +34,11 @@ $( document ).ready(function() {
         let items = [];
         for (var i = gallery.start; i <= gallery.end; i++) {
             let srcI = `images/${gallery.filename}/${gallery.filename}-${i}.jpg`;
+
+            // console.log(srcI);
             let wI = (gallery.imageDescriptions['i'+i] === undefined) ? 1500 :  gallery.imageDescriptions['i'+i].size.w;
             let hI = (gallery.imageDescriptions['i'+i] === undefined) ? 1000 :  gallery.imageDescriptions['i'+i].size.h;
+            console.log(gallery.imageDescriptions['i'+i] , 'i'+i , gallery.imageDescriptions);
             let titleI = (gallery.imageDescriptions['i'+i] === undefined) ? null :  gallery.imageDescriptions['i'+i].description;
             items.push({ src: srcI, w: wI, h: hI, title: titleI})
         }
@@ -48,7 +51,6 @@ $( document ).ready(function() {
         setTimeout(function(){
             for(var j = i; j> i - 3; j--) {
                 Materialize.fadeInImage(`#i${j}`);
-                console.log(j);
             }
         },1300 + (i * 100));
     }
@@ -130,7 +132,6 @@ $( document ).ready(function() {
 
     function handleView(galleries){
         let gallery = decodeURI($.urlParam('gallery'));
-        console.log(gallery);
         if (gallery != "NO") {
             console.log('gallery name is ' + gallery);
             //add logic for specific gallery
@@ -197,9 +198,11 @@ $( document ).ready(function() {
                                     "start": 1,
                                     "end": 32,
                                     "description": "mus vitae porttitor urna, vitae lobortis mauris. Etiam vulputate viverra venenatis.",
-                                    "imageDescriptions": {"i1": {"size": {"w": 3000, "h": 3000} , "description": "This is a tree" },
-                                                           "i17": {"size": {"w": 1353,"h": 2047} }
+                                    "imageDescriptions": {
+                                                        
                                                             }
+
+                                                            
                                 },
                                 {
                                     "filename": "2",
@@ -208,8 +211,8 @@ $( document ).ready(function() {
                                     "start": 1,
                                     "end": 4,
                                     "description": "mus vitae porttitor urna, vitae lobortis mauris. Etiam vulputate viverra venenatis.",
-                                    "imageDescriptions": {"i1": {"size": {"w": 3000, "h": 3000} , "description": "This is a tree" },
-                                                           "i17": {"size": {"w": 1353,"h": 2047} }
+                                    "imageDescriptions": {
+                                        
                                                             }
                                 }
                 ]
@@ -234,7 +237,6 @@ $( document ).ready(function() {
         // define options (if needed)
         var options = newOptions;
         
-        console.log(items, options)
         var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
         gallery.init();
     };
