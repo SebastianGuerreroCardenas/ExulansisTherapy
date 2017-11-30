@@ -146,9 +146,9 @@ $( document ).ready(function() {
     //runs once and handles all logic
     function main(){
         galleries = getGalleries();
-        localStorage.setItem('g', JSON.stringify(galleries) )
-        addNavItems(galleries);
-        handleView(galleries);
+        // localStorage.setItem('g', JSON.stringify(galleries) )
+        // addNavItems(galleries);
+        // handleView(galleries);
     }
 
 
@@ -187,7 +187,10 @@ $( document ).ready(function() {
         loadJSON(function(response) {
             // Parse JSON string into object
             console.log(JSON.parse(response))
-            localStorage.setItem('g', JSON.stringify(response) )
+            let galleries = JSON.parse(response);
+            localStorage.setItem('g', response )
+            addNavItems(galleries);
+            handleView(galleries);
             return JSON.parse(response);
         });
     }
