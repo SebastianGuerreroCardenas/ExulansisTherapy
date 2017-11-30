@@ -183,264 +183,264 @@ $( document ).ready(function() {
     function getGalleries() {
 
         
-        // return {
+        return {
 
-        //         "about": {
-        //             "name": "Sebastian Guerrero Cardenas",
-        //             "email": "sebastian.guerrero.cmu@gmail.com",
-        //             "mainTitle": "Exulansis Therapy",
-        //             "profilePhoto": "images/2/2-1.jpg"
-        //         },
-        //         "gallery" : [
-        //                         {
-        //                             "filename": "1",
-        //                             "title": "Summer Friends",
-        //                             "order": true,
-        //                             "start": 1,
-        //                             "end": 32,
-        //                             "description": "May 15th was the day when my dad handed me down one of my favorites things and most prized posetions to this day. He gave me his Nikon FM that shoots 35 mm and was a gift to gim when he was 17. He got this camera in exahnge for not going on a trip to New York when he was younger. The camera is very sentimental becasue ithas captured the majority of my childshood, and the majority of what I know about my dads and familys hisstory. I hope to keep using this camear the way it served my family and me",
-        //                             "imageDescriptions": {
-        //                                                     "i1": {
-        //                                                       "size": {
-        //                                                         "w": 2000,
-        //                                                         "h": 1333.6
-        //                                                       },
-        //                                                       "description": " "
-        //                                                     },
-        //                                                     "i10": {
-        //                                                       "size": {
-        //                                                         "w": 2000,
-        //                                                         "h": 1333.3333333333333
-        //                                                       },
-        //                                                       "description": " "
-        //                                                     },
-        //                                                     "i11": {
-        //                                                       "size": {
-        //                                                         "w": 2000,
-        //                                                         "h": 1333.3333333333333
-        //                                                       },
-        //                                                       "description": " "
-        //                                                     },
-        //                                                     "i12": {
-        //                                                       "size": {
-        //                                                         "w": 2000,
-        //                                                         "h": 1333.3333333333333
-        //                                                       },
-        //                                                       "description": " "
-        //                                                     },
-        //                                                     "i13": {
-        //                                                       "size": {
-        //                                                         "w": 2000,
-        //                                                         "h": 1333.3333333333333
-        //                                                       },
-        //                                                       "description": " "
-        //                                                     },
-        //                                                     "i14": {
-        //                                                       "size": {
-        //                                                         "w": 2000,
-        //                                                         "h": 1382.3884197828709
-        //                                                       },
-        //                                                       "description": " "
-        //                                                     },
-        //                                                     "i15": {
-        //                                                       "size": {
-        //                                                         "w": 2000,
-        //                                                         "h": 1333.3333333333333
-        //                                                       },
-        //                                                       "description": " "
-        //                                                     },
-        //                                                     "i16": {
-        //                                                       "size": {
-        //                                                         "w": 2000,
-        //                                                         "h": 1333.3333333333333
-        //                                                       },
-        //                                                       "description": " "
-        //                                                     },
-        //                                                     "i17": {
-        //                                                       "size": {
-        //                                                         "w": 1321.934538348803,
-        //                                                         "h": 2000
-        //                                                       },
-        //                                                       "description": " "
-        //                                                     },
-        //                                                     "i18": {
-        //                                                       "size": {
-        //                                                         "w": 2000,
-        //                                                         "h": 1333.3333333333333
-        //                                                       },
-        //                                                       "description": " "
-        //                                                     },
-        //                                                     "i19": {
-        //                                                       "size": {
-        //                                                         "w": 2000,
-        //                                                         "h": 1333.3333333333333
-        //                                                       },
-        //                                                       "description": " "
-        //                                                     },
-        //                                                     "i2": {
-        //                                                       "size": {
-        //                                                         "w": 2000,
-        //                                                         "h": 1389.865563598759
-        //                                                       },
-        //                                                       "description": " "
-        //                                                     },
-        //                                                     "i20": {
-        //                                                       "size": {
-        //                                                         "w": 2000,
-        //                                                         "h": 1333.3333333333333
-        //                                                       },
-        //                                                       "description": " "
-        //                                                     },
-        //                                                     "i21": {
-        //                                                       "size": {
-        //                                                         "w": 2000,
-        //                                                         "h": 1333.3333333333333
-        //                                                       },
-        //                                                       "description": " "
-        //                                                     },
-        //                                                     "i22": {
-        //                                                       "size": {
-        //                                                         "w": 2000,
-        //                                                         "h": 1333.3333333333333
-        //                                                       },
-        //                                                       "description": " "
-        //                                                     },
-        //                                                     "i23": {
-        //                                                       "size": {
-        //                                                         "w": 2000,
-        //                                                         "h": 1333.3333333333333
-        //                                                       },
-        //                                                       "description": " "
-        //                                                     },
-        //                                                     "i24": {
-        //                                                       "size": {
-        //                                                         "w": 2000,
-        //                                                         "h": 1333.3333333333333
-        //                                                       },
-        //                                                       "description": " "
-        //                                                     },
-        //                                                     "i25": {
-        //                                                       "size": {
-        //                                                         "w": 2000,
-        //                                                         "h": 1333.3333333333333
-        //                                                       },
-        //                                                       "description": " "
-        //                                                     },
-        //                                                     "i26": {
-        //                                                       "size": {
-        //                                                         "w": 2000,
-        //                                                         "h": 1332.03125
-        //                                                       },
-        //                                                       "description": " "
-        //                                                     },
-        //                                                     "i27": {
-        //                                                       "size": {
-        //                                                         "w": 2000,
-        //                                                         "h": 1332.03125
-        //                                                       },
-        //                                                       "description": " "
-        //                                                     },
-        //                                                     "i28": {
-        //                                                       "size": {
-        //                                                         "w": 2000,
-        //                                                         "h": 1332.03125
-        //                                                       },
-        //                                                       "description": " "
-        //                                                     },
-        //                                                     "i29": {
-        //                                                       "size": {
-        //                                                         "w": 2000,
-        //                                                         "h": 1332.03125
-        //                                                       },
-        //                                                       "description": " "
-        //                                                     },
-        //                                                     "i3": {
-        //                                                       "size": {
-        //                                                         "w": 2000,
-        //                                                         "h": 1333.3333333333333
-        //                                                       },
-        //                                                       "description": " "
-        //                                                     },
-        //                                                     "i30": {
-        //                                                       "size": {
-        //                                                         "w": 2000,
-        //                                                         "h": 1332.03125
-        //                                                       },
-        //                                                       "description": " "
-        //                                                     },
-        //                                                     "i31": {
-        //                                                       "size": {
-        //                                                         "w": 2000,
-        //                                                         "h": 1380.9954751131222
-        //                                                       },
-        //                                                       "description": " "
-        //                                                     },
-        //                                                     "i32": {
-        //                                                       "size": {
-        //                                                         "w": 2000,
-        //                                                         "h": 1333.3333333333333
-        //                                                       },
-        //                                                       "description": " "
-        //                                                     },
-        //                                                     "i4": {
-        //                                                       "size": {
-        //                                                         "w": 2000,
-        //                                                         "h": 1333.3333333333333
-        //                                                       },
-        //                                                       "description": " "
-        //                                                     },
-        //                                                     "i5": {
-        //                                                       "size": {
-        //                                                         "w": 2000,
-        //                                                         "h": 1333.3333333333333
-        //                                                       },
-        //                                                       "description": " "
-        //                                                     },
-        //                                                     "i6": {
-        //                                                       "size": {
-        //                                                         "w": 2000,
-        //                                                         "h": 1333.3333333333333
-        //                                                       },
-        //                                                       "description": " "
-        //                                                     },
-        //                                                     "i7": {
-        //                                                       "size": {
-        //                                                         "w": 1313,
-        //                                                         "h": 2000
-        //                                                       },
-        //                                                       "description": " "
-        //                                                     },
-        //                                                     "i8": {
-        //                                                       "size": {
-        //                                                         "w": 2000,
-        //                                                         "h": 1333.3333333333333
-        //                                                       },
-        //                                                       "description": " "
-        //                                                     },
-        //                                                     "i9": {
-        //                                                       "size": {
-        //                                                         "w": 2000,
-        //                                                         "h": 1333.3333333333333
-        //                                                       },
-        //                                                       "description": " "
-        //                                                     }
-        //                                                   }
+                "about": {
+                    "name": "Sebastian Guerrero Cardenas",
+                    "email": "sebastian.guerrero.cmu@gmail.com",
+                    "mainTitle": "Exulansis Therapy",
+                    "profilePhoto": "images/2/2-1.jpg"
+                },
+                "gallery" : [
+                                {
+                                    "filename": "1",
+                                    "title": "Summer Friends",
+                                    "order": true,
+                                    "start": 1,
+                                    "end": 32,
+                                    "description": "May 15th was the day when my dad handed me down one of my favorites things and most prized posetions to this day. He gave me his Nikon FM that shoots 35 mm and was a gift to gim when he was 17. He got this camera in exahnge for not going on a trip to New York when he was younger. The camera is very sentimental becasue ithas captured the majority of my childshood, and the majority of what I know about my dads and familys hisstory. I hope to keep using this camear the way it served my family and me",
+                                    "imageDescriptions": {
+                                                            "i1": {
+                                                              "size": {
+                                                                "w": 2000,
+                                                                "h": 1333.6
+                                                              },
+                                                              "description": " "
+                                                            },
+                                                            "i10": {
+                                                              "size": {
+                                                                "w": 2000,
+                                                                "h": 1333.3333333333333
+                                                              },
+                                                              "description": " "
+                                                            },
+                                                            "i11": {
+                                                              "size": {
+                                                                "w": 2000,
+                                                                "h": 1333.3333333333333
+                                                              },
+                                                              "description": " "
+                                                            },
+                                                            "i12": {
+                                                              "size": {
+                                                                "w": 2000,
+                                                                "h": 1333.3333333333333
+                                                              },
+                                                              "description": " "
+                                                            },
+                                                            "i13": {
+                                                              "size": {
+                                                                "w": 2000,
+                                                                "h": 1333.3333333333333
+                                                              },
+                                                              "description": " "
+                                                            },
+                                                            "i14": {
+                                                              "size": {
+                                                                "w": 2000,
+                                                                "h": 1382.3884197828709
+                                                              },
+                                                              "description": " "
+                                                            },
+                                                            "i15": {
+                                                              "size": {
+                                                                "w": 2000,
+                                                                "h": 1333.3333333333333
+                                                              },
+                                                              "description": " "
+                                                            },
+                                                            "i16": {
+                                                              "size": {
+                                                                "w": 2000,
+                                                                "h": 1333.3333333333333
+                                                              },
+                                                              "description": " "
+                                                            },
+                                                            "i17": {
+                                                              "size": {
+                                                                "w": 1321.934538348803,
+                                                                "h": 2000
+                                                              },
+                                                              "description": " "
+                                                            },
+                                                            "i18": {
+                                                              "size": {
+                                                                "w": 2000,
+                                                                "h": 1333.3333333333333
+                                                              },
+                                                              "description": " "
+                                                            },
+                                                            "i19": {
+                                                              "size": {
+                                                                "w": 2000,
+                                                                "h": 1333.3333333333333
+                                                              },
+                                                              "description": " "
+                                                            },
+                                                            "i2": {
+                                                              "size": {
+                                                                "w": 2000,
+                                                                "h": 1389.865563598759
+                                                              },
+                                                              "description": " "
+                                                            },
+                                                            "i20": {
+                                                              "size": {
+                                                                "w": 2000,
+                                                                "h": 1333.3333333333333
+                                                              },
+                                                              "description": " "
+                                                            },
+                                                            "i21": {
+                                                              "size": {
+                                                                "w": 2000,
+                                                                "h": 1333.3333333333333
+                                                              },
+                                                              "description": " "
+                                                            },
+                                                            "i22": {
+                                                              "size": {
+                                                                "w": 2000,
+                                                                "h": 1333.3333333333333
+                                                              },
+                                                              "description": " "
+                                                            },
+                                                            "i23": {
+                                                              "size": {
+                                                                "w": 2000,
+                                                                "h": 1333.3333333333333
+                                                              },
+                                                              "description": " "
+                                                            },
+                                                            "i24": {
+                                                              "size": {
+                                                                "w": 2000,
+                                                                "h": 1333.3333333333333
+                                                              },
+                                                              "description": " "
+                                                            },
+                                                            "i25": {
+                                                              "size": {
+                                                                "w": 2000,
+                                                                "h": 1333.3333333333333
+                                                              },
+                                                              "description": " "
+                                                            },
+                                                            "i26": {
+                                                              "size": {
+                                                                "w": 2000,
+                                                                "h": 1332.03125
+                                                              },
+                                                              "description": " "
+                                                            },
+                                                            "i27": {
+                                                              "size": {
+                                                                "w": 2000,
+                                                                "h": 1332.03125
+                                                              },
+                                                              "description": " "
+                                                            },
+                                                            "i28": {
+                                                              "size": {
+                                                                "w": 2000,
+                                                                "h": 1332.03125
+                                                              },
+                                                              "description": " "
+                                                            },
+                                                            "i29": {
+                                                              "size": {
+                                                                "w": 2000,
+                                                                "h": 1332.03125
+                                                              },
+                                                              "description": " "
+                                                            },
+                                                            "i3": {
+                                                              "size": {
+                                                                "w": 2000,
+                                                                "h": 1333.3333333333333
+                                                              },
+                                                              "description": " "
+                                                            },
+                                                            "i30": {
+                                                              "size": {
+                                                                "w": 2000,
+                                                                "h": 1332.03125
+                                                              },
+                                                              "description": " "
+                                                            },
+                                                            "i31": {
+                                                              "size": {
+                                                                "w": 2000,
+                                                                "h": 1380.9954751131222
+                                                              },
+                                                              "description": " "
+                                                            },
+                                                            "i32": {
+                                                              "size": {
+                                                                "w": 2000,
+                                                                "h": 1333.3333333333333
+                                                              },
+                                                              "description": " "
+                                                            },
+                                                            "i4": {
+                                                              "size": {
+                                                                "w": 2000,
+                                                                "h": 1333.3333333333333
+                                                              },
+                                                              "description": " "
+                                                            },
+                                                            "i5": {
+                                                              "size": {
+                                                                "w": 2000,
+                                                                "h": 1333.3333333333333
+                                                              },
+                                                              "description": " "
+                                                            },
+                                                            "i6": {
+                                                              "size": {
+                                                                "w": 2000,
+                                                                "h": 1333.3333333333333
+                                                              },
+                                                              "description": " "
+                                                            },
+                                                            "i7": {
+                                                              "size": {
+                                                                "w": 1313,
+                                                                "h": 2000
+                                                              },
+                                                              "description": " "
+                                                            },
+                                                            "i8": {
+                                                              "size": {
+                                                                "w": 2000,
+                                                                "h": 1333.3333333333333
+                                                              },
+                                                              "description": " "
+                                                            },
+                                                            "i9": {
+                                                              "size": {
+                                                                "w": 2000,
+                                                                "h": 1333.3333333333333
+                                                              },
+                                                              "description": " "
+                                                            }
+                                                          }
 
                                                             
-        //                         },
-        //                         {
-        //                             "filename": "2",
-        //                             "title": "Schenley",
-        //                             "order": false,
-        //                             "start": 1,
-        //                             "end": 4,
-        //                             "description": "mus vitae porttitor urna, vitae lobortis mauris. Etiam vulputate viverra venenatis.",
-        //                             "imageDescriptions": {
+                                },
+                                {
+                                    "filename": "2",
+                                    "title": "Schenley",
+                                    "order": false,
+                                    "start": 1,
+                                    "end": 4,
+                                    "description": "mus vitae porttitor urna, vitae lobortis mauris. Etiam vulputate viverra venenatis.",
+                                    "imageDescriptions": {
 
-        //                                                     }
-        //                         }
-        //         ]
-        //     }
+                                                            }
+                                }
+                ]
+            }
 
 
         console.log('getting data....')
