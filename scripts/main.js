@@ -187,6 +187,7 @@ $( document ).ready(function() {
         loadJSON(function(response) {
             // Parse JSON string into object
             console.log(JSON.parse(response))
+            localStorage.setItem('g', JSON.stringify(response) )
             return JSON.parse(response);
         });
     }
